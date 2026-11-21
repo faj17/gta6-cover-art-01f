@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Neon Coast — GTA-style cover maker</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <h1>NEON COAST</h1>
+  <p class="tag">GTA-style multi-panel cover maker &mdash; your photo, your caption, one PNG to post.</p>
+  <p class="orig">100% original art. No Rockstar logo, artwork or font. Photos stay on your machine.</p>
+</header>
+
+<main class="wrap">
+  <section class="stage">
+    <canvas id="preview" width="900" height="900"></canvas>
+    <p class="hint">Click a panel to select it, then drag it to reposition the photo. Scroll or use the zoom slider to crop.</p>
+    <div class="panels" id="panelBtns"></div>
+  </section>
+
+  <section class="controls">
+    <h2>1 &middot; Layout</h2>
+    <div class="row" id="layoutRow">
+      <button type="button" data-layout="strip" class="on">Sunset Strip</button>
+      <button type="button" data-layout="grid">Vice Grid</button>
+      <button type="button" data-layout="duo">Neon Duo</button>
+    </div>
+
+    <h2>2 &middot; Photo</h2>
+    <div class="row">
+      <button type="button" id="uploadBtn">Upload photo&hellip;</button>
+      <button type="button" id="fillAllBtn">Fill all panels</button>
+      <input type="file" id="fileInput" accept="image/*" hidden>
+    </div>
+    <div class="row samples">
+      <span class="lbl">Or try a sample scene:</span>
+      <button type="button" data-sample="1">Boulevard</button>
+      <button type="button" data-sample="2">Pier</button>
+      <button type="button" data-sample="3">Beach</button>
+    </div>
+    <label class="slider">Zoom selected panel
+      <input type="range" id="zoom" min="1" max="3" step="0.01" value="1">
+    </label>
+    <div class="row">
+      <button type="button" id="fitBtn">Reset crop</button>
+      <button type="button" id="swapBtn">Shuffle samples</button>
+    </div>
+
+    <h2>3 &middot; Caption</h2>
+    <label class="field">Title
+      <input type="text" id="caption" value="NEON COAST" maxlength="24">
+    </label>
+    <label class="field">Subtitle
+      <input type="text" id="subtitle" value="VICE CITY &bull; 2026" maxlength="48">
+    </label>
+    <div class="row" id="themeRow">
+      <button type="button" data-theme="sunset" class="on" style="--sw:#ff5e7a">Sunset</button>
+      <button type="button" data-theme="neon" style="--sw:#ff2ea6">Neon</button>
+      <button type="button" data-theme="teal" style="--sw:#00b3ff">Teal Night</button>
+      <button type="button" data-theme="gold" style="--sw:#ffb347">Gold</button>
+    </div>
+
+    <h2>4 &middot; Export</h2>
+    <div class="row" id="sizeRow">
+      <button type="button" data-size="1080x1080">1080 &times; 1080</button>
+      <button type="button" data-size="1080x1350" class="on">1080 &times; 1350</button>
+      <button type="button" data-size="1920x1080">1920 &times; 1080</button>
+    </div>
+    <button type="button" id="exportBtn" class="big">Export PNG</button>
+    <p id="status" class="status">Ready. Pick a layout, add a photo, export.</p>
+  </section>
+</main>
+
+<footer>
+  <p>Neon Coast is an original cover maker. It is not affiliated with Rockstar Games.</p>
+</footer>
+
+<script src="src/cover.js"></script>
+<script src="src/main.js"></script>
+<script src="src/shots.js"></script>
+</body>
+</html>

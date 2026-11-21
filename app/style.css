@@ -1,0 +1,91 @@
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: #0d0716;
+  color: #f5eefc;
+  font: 16px/1.5 "Segoe UI", system-ui, -apple-system, sans-serif;
+}
+.top { text-align: center; padding: 28px 16px 8px; }
+.top h1 {
+  margin: 0;
+  font-size: 44px;
+  letter-spacing: 6px;
+  font-style: italic;
+  font-weight: 900;
+  background: linear-gradient(90deg, #ffb347, #ff5e7a 45%, #7b2ff7 80%, #00e5ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.top .tag { margin: 4px 0 0; color: #e8d5f7; }
+.top .orig { margin: 2px 0 0; font-size: 13px; color: #9d8bb3; }
+.wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: center;
+  padding: 18px 16px 8px;
+  max-width: 1180px;
+  margin: 0 auto;
+}
+.stage { flex: 1 1 480px; max-width: 620px; }
+#preview {
+  width: 100%;
+  height: auto;
+  max-height: 72vh;
+  display: block;
+  border: 2px solid #3d2358;
+  border-radius: 10px;
+  background: #160a24;
+  cursor: grab;
+  touch-action: none;
+}
+#preview:active { cursor: grabbing; }
+.hint { font-size: 13px; color: #b9a6cf; margin: 8px 2px; }
+.panels { display: flex; gap: 8px; flex-wrap: wrap; }
+.controls { flex: 1 1 320px; max-width: 420px; }
+.controls h2 { font-size: 15px; letter-spacing: 2px; text-transform: uppercase; color: #ffb347; margin: 18px 0 8px; }
+.row { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+button {
+  background: #241338;
+  color: #f5eefc;
+  border: 1px solid #5b3a86;
+  border-radius: 8px;
+  padding: 9px 14px;
+  font: inherit;
+  font-size: 14px;
+  cursor: pointer;
+}
+button:hover { border-color: #ff5e7a; }
+button.on { background: #ff5e7a; border-color: #ff5e7a; color: #fff; font-weight: 700; }
+button.big {
+  width: 100%;
+  padding: 14px;
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  background: linear-gradient(90deg, #ff5e7a, #7b2ff7);
+  border: none;
+  margin-top: 10px;
+}
+button[data-theme] { border-left: 8px solid var(--sw, #ff5e7a); }
+.lbl { font-size: 13px; color: #b9a6cf; }
+.field { display: block; margin: 8px 0; font-size: 13px; color: #b9a6cf; }
+.field input {
+  display: block;
+  width: 100%;
+  margin-top: 4px;
+  padding: 10px 12px;
+  font: inherit;
+  font-size: 16px;
+  color: #fff;
+  background: #1b0d2c;
+  border: 1px solid #5b3a86;
+  border-radius: 8px;
+}
+.field input:focus { outline: 2px solid #ff5e7a; }
+.slider { display: block; margin: 10px 0; font-size: 13px; color: #b9a6cf; }
+.slider input { width: 100%; accent-color: #ff5e7a; }
+.status { font-size: 13px; color: #7dffd4; min-height: 20px; }
+footer { text-align: center; color: #6f5d85; font-size: 12px; padding: 10px 16px 24px; }
+@media (max-width: 700px) { .top h1 { font-size: 32px; } }
